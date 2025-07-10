@@ -1,0 +1,33 @@
+[project]
+name = "app-lab"
+version = "0.1.0"
+description = "app-lab"
+authors = [
+    {name = "Dowson Chen",email = "chendongsong@outlook.com"}
+]
+readme = "README.md"
+requires-python = ">=3.10,<4.0"
+dependencies = [
+    "fastapi (>=0.116.0,<0.117.0)",
+    "uvicorn[standard] (>=0.35.0,<0.36.0)"
+]
+
+package-mode = false
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
+flake8 = "^7.3.0"
+pytest = "^8.4.1"
+taskipy = "^1.14.1"
+
+[tool.taskipy.tasks]
+run-todo = "python apps/todo/main.py"
+serve-todo = "uvicorn apps.todo.main:app --reload"
+format = "black ."
+lint = "flake8 apps common"
+test = "pytest"
