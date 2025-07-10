@@ -31,3 +31,20 @@ serve-todo = "uvicorn apps.todo.main:app --reload"
 format = "black ."
 lint = "flake8 apps common"
 test = "pytest"
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+skip-string-normalization = true
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = ["E203", "W503"]  # ignores conflicts with black
+exclude = ["__pycache__", ".venv", "build", "dist", ".git", ".mypy_cache", ".pytest_cache"]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests"
+]
