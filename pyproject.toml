@@ -3,7 +3,7 @@ name = "app-lab"
 version = "0.1.0"
 description = "app-lab"
 authors = [
-    {name = "Dowson Chen",email = "chendongsong@outlook.com"}
+    {name = "Dowson Chen"}
 ]
 readme = "README.md"
 requires-python = ">=3.10,<4.0"

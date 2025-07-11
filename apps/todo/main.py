@@ -3,6 +3,7 @@ from common.utils import greet
 
 app = FastAPI()
 
-@app.get('/')
+
+@app.get("/")
 def root():
-    return {'message': greet('from TODO app')}
+    return {"message": greet("from TODO app")}
